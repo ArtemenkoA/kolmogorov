@@ -16,5 +16,28 @@ namespace kolmogorov
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int n = Convert.ToInt32(textBox1.Text);
+            dataGridView1.RowCount = n;
+            dataGridView1.ColumnCount = n;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+                column.Width = 100500;
+        }
     }
 }
