@@ -25,8 +25,11 @@ namespace kolmogorov
         private void button1_Click(object sender, EventArgs e)
         {
             int n = Convert.ToInt32(textBox1.Text);
-            dataGridView1.RowCount = n;
-            dataGridView1.ColumnCount = n;
+            table.RowCount = n;
+            table.ColumnCount = n;
+            foreach (DataGridViewColumn column in table.Columns)
+                column.Width = 30;
+                
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -36,8 +39,23 @@ namespace kolmogorov
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (DataGridViewColumn column in dataGridView1.Columns)
-                column.Width = 100500;
+          
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int n = Convert.ToInt32(textBox1.Text);
+            double[,] matrix = new double[n, n];
+            
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    matrix[i, j] = Convert.ToDouble(table.Rows[i].Cells[j].Value);
+                }
+            }
+
+
         }
     }
 }
