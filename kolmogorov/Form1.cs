@@ -91,6 +91,7 @@ namespace kolmogorov
                 Answers[i] = 0;
                 FreeCoef[i] = 0;
             }
+            List<int[]> list = new List<int[]>();
 
             FreeCoef[n-1] = 1;
 
@@ -98,7 +99,7 @@ namespace kolmogorov
 
             for (int i = 0; i < n; i++)
             {
-                listBox1.Items.Add(Answers[i]);
+                listBox1.Items.Add("S" + (i+1) + ":  " + Answers[i]);
             }
 
         }
