@@ -19,11 +19,6 @@ namespace kolmogorov
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             int n = Convert.ToInt32(textBox1.Text);
@@ -31,17 +26,6 @@ namespace kolmogorov
             table.ColumnCount = n;
             foreach (DataGridViewColumn column in table.Columns)
                 column.Width = 30;
-                
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-          
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -53,7 +37,7 @@ namespace kolmogorov
             double answer=0;
             double[] Answers = new double[n];
             double[] FreeCoef = new double[n];
-
+            double[] Times = new double[n];
 
             for (int i = 0; i < n; i++)
             {
@@ -83,40 +67,26 @@ namespace kolmogorov
 
             for (int i = 0; i < n; i++)
             {
-                matrix_slau[n-1, i] = 1;
-            }
-
-            for (int i = 0; i < n; i++)
-            {
                 Answers[i] = 0;
                 FreeCoef[i] = 0;
+                matrix_slau[n-1, i] = 1;
             }
-            List<int[]> list = new List<int[]>();
 
             FreeCoef[n-1] = 1;
 
             Gauss(matrix_slau, FreeCoef, answer, Answers, n);
 
+
             for (int i = 0; i < n; i++)
             {
-                listBox1.Items.Add("S" + (i+1) + ":  " + Answers[i]);
+                double sum_l = 0;
+                for (int j = 0; j < n; j++)
+                {
+                     sum_l = sum_l + matrix[i, j];
+                }
+                Times[i] = -(Answers[i] - 1) / sum_l;
+                listBox1.Items.Add("P" + (i + 1) + ":  " + Answers[i] + "   t=  " + Times[i]);
             }
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         void Gauss(double[,] matrix, double[] FreeCoef, double answer, double[] Answers, int n)
@@ -133,7 +103,6 @@ namespace kolmogorov
                 }
             }
 
-
             for (int k = n - 1; k >= 0; k--)
             {
                 answer = 0;
@@ -143,15 +112,13 @@ namespace kolmogorov
             }
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e) { }
+        private void label2_Click(object sender, EventArgs e) { }
+        private void textBox2_TextChanged(object sender, EventArgs e) { }
+        private void Form1_Load(object sender, EventArgs e) { }
+        private void pictureBox1_Click(object sender, EventArgs e) { }
+        private void textBox1_TextChanged(object sender, EventArgs e) { }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+        private void label1_Click(object sender, EventArgs e) { }
     }
 }
-
