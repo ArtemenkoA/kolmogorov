@@ -38,15 +38,15 @@
             this.button2 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(628, 70);
+            this.textBox1.Location = new System.Drawing.Point(786, 122);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 22);
+            this.textBox1.Size = new System.Drawing.Size(42, 22);
             this.textBox1.TabIndex = 0;
             this.textBox1.UseWaitCursor = true;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -56,7 +56,7 @@
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(625, 36);
+            this.label1.Location = new System.Drawing.Point(565, 125);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(215, 16);
             this.label1.TabIndex = 1;
@@ -70,8 +70,10 @@
             this.table.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.table.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.table.ColumnHeadersVisible = false;
+            this.table.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -80,20 +82,20 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.table.DefaultCellStyle = dataGridViewCellStyle1;
-            this.table.GridColor = System.Drawing.SystemColors.Desktop;
-            this.table.Location = new System.Drawing.Point(12, 84);
+            this.table.GridColor = System.Drawing.SystemColors.ButtonFace;
+            this.table.Location = new System.Drawing.Point(12, 12);
             this.table.Name = "table";
             this.table.RowHeadersVisible = false;
             this.table.RowHeadersWidth = 51;
-            this.table.RowTemplate.Height = 24;
-            this.table.Size = new System.Drawing.Size(416, 301);
+            this.table.RowTemplate.Height = 40;
+            this.table.Size = new System.Drawing.Size(539, 499);
             this.table.TabIndex = 2;
             this.table.UseWaitCursor = true;
             this.table.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(682, 98);
+            this.button1.Location = new System.Drawing.Point(855, 121);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 23);
             this.button1.TabIndex = 3;
@@ -104,7 +106,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(682, 149);
+            this.button2.Location = new System.Drawing.Point(712, 158);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 23);
             this.button2.TabIndex = 4;
@@ -123,30 +125,19 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(500, 225);
+            this.listBox1.Location = new System.Drawing.Point(568, 187);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(384, 180);
+            this.listBox1.Size = new System.Drawing.Size(384, 324);
             this.listBox1.TabIndex = 7;
             this.listBox1.UseWaitCursor = true;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(565, 196);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(247, 16);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Вероятности нахождения состояний ";
-            this.label2.UseWaitCursor = true;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(905, 435);
-            this.Controls.Add(this.label2);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(991, 551);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -156,6 +147,7 @@
             this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = " kolmоgorov";
             this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -174,7 +166,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label2;
     }
 }
 

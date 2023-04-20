@@ -25,7 +25,8 @@ namespace kolmogorov
             table.RowCount = n;
             table.ColumnCount = n;
             foreach (DataGridViewColumn column in table.Columns)
-                column.Width = 30;
+                column.Width = 40;
+                
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -75,7 +76,6 @@ namespace kolmogorov
             FreeCoef[n-1] = 1;
 
             Gauss(matrix_slau, FreeCoef, answer, Answers, n);
-
 
             for (int i = 0; i < n; i++)
             {
